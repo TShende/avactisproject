@@ -1,0 +1,4 @@
+Url = http://localhost/avactis/index.php
+browser = CHROME
+TestDataFolderpath = D:\\Workspace_new\\com.avactis.artifact\\src\\test\\resources\\TestData
+RegistrationdataExcel = RegistrationTestData

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="109642" started-at="2019-04-28T10:49:58Z" finished-at="2019-04-28T10:51:48Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="109642" started-at="2019-04-28T10:49:58Z" finished-at="2019-04-28T10:51:48Z">
+      <class name="avactisregistertest.NewTest">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:avactisregistertest.NewTest@14acaea5]" name="beforeMethod" is-config="true" duration-ms="16477" started-at="2019-04-28T16:19:59Z" finished-at="2019-04-28T16:20:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="f(java.util.Map)[pri:0, instance:avactisregistertest.NewTest@14acaea5]" name="f" duration-ms="32701" started-at="2019-04-28T16:20:16Z" data-provider="dp" finished-at="2019-04-28T16:20:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=tripti.shende@ymail.com, Password=Tripu1993, Re-Type Password=Tripu1993, First Name=Tripti, Last Name=Shende, Country=India, State=Maharashtra, Zip/Postal Code=411057.0, City=Pune, Address Line 1=B104, Address Line 2=Altissimo society, Contact Phone=9.145292483E9}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:avactisregistertest.NewTest@14acaea5]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-04-28T16:20:49Z" finished-at="2019-04-28T16:20:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:avactisregistertest.NewTest@14acaea5]" name="beforeMethod" is-config="true" duration-ms="23524" started-at="2019-04-28T16:20:49Z" finished-at="2019-04-28T16:21:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="f(java.util.Map)[pri:0, instance:avactisregistertest.NewTest@14acaea5]" name="f" duration-ms="35990" started-at="2019-04-28T16:21:12Z" data-provider="dp" finished-at="2019-04-28T16:21:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=ankush.wasankar@gmail.com, Password=Ankush123, Re-Type Password=Ankush123, First Name=Ankush, Last Name=Wasankar, Country=Australia, State=New South Wales, Zip/Postal Code=492008.0, City=Sydney, Address Line 1=c105, Address Line 2=Altissimo society2, Contact Phone=8.109325892E9}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:avactisregistertest.NewTest@14acaea5]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-04-28T16:21:48Z" finished-at="2019-04-28T16:21:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- avactisregistertest.NewTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
