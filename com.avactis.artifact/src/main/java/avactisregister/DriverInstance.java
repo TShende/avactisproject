@@ -32,6 +32,10 @@ browser =	ConfigReader.getPropertyfromFile("avactis", "browser");
 return driver;
 }
 	
+public void close()
+{
+	driver.quit();
+}
 	
 	
 

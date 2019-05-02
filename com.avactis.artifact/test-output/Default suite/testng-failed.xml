@@ -6,7 +6,9 @@
       <class name="avactisregistertest.NewTest">
         <methods>
           <include name="afterMethod"/>
+          <include name="beforeSuite"/>
           <include name="f" invocation-numbers="0 1"/>
+          <include name="teardown"/>
           <include name="beforeMethod"/>
         </methods>
       </class> <!-- avactisregistertest.NewTest -->

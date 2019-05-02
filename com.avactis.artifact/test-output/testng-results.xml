@@ -2,16 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="109642" started-at="2019-04-28T10:49:58Z" finished-at="2019-04-28T10:51:48Z">
+  <suite name="Default suite" duration-ms="67940" started-at="2019-05-02T13:41:05Z" finished-at="2019-05-02T13:42:13Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="109642" started-at="2019-04-28T10:49:58Z" finished-at="2019-04-28T10:51:48Z">
+    <test name="Default test" duration-ms="67940" started-at="2019-05-02T13:41:05Z" finished-at="2019-05-02T13:42:13Z">
       <class name="avactisregistertest.NewTest">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:avactisregistertest.NewTest@14acaea5]" name="beforeMethod" is-config="true" duration-ms="16477" started-at="2019-04-28T16:19:59Z" finished-at="2019-04-28T16:20:16Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:avactisregistertest.NewTest@26653222]" name="beforeSuite" is-config="true" duration-ms="13147" started-at="2019-05-02T19:10:52Z" finished-at="2019-05-02T19:11:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:avactisregistertest.NewTest@26653222]" name="beforeMethod" is-config="true" duration-ms="23654" started-at="2019-05-02T19:11:07Z" finished-at="2019-05-02T19:11:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="f(java.util.Map)[pri:0, instance:avactisregistertest.NewTest@14acaea5]" name="f" duration-ms="32701" started-at="2019-04-28T16:20:16Z" data-provider="dp" finished-at="2019-04-28T16:20:49Z">
+        <test-method status="PASS" signature="f(java.util.Map)[pri:0, instance:avactisregistertest.NewTest@26653222]" name="f" duration-ms="23121" started-at="2019-05-02T19:11:31Z" data-provider="dp" finished-at="2019-05-02T19:11:54Z">
           <params>
             <param index="0">
               <value>
@@ -22,15 +26,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:avactisregistertest.NewTest@14acaea5]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-04-28T16:20:49Z" finished-at="2019-04-28T16:20:49Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:avactisregistertest.NewTest@26653222]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-05-02T19:11:54Z" finished-at="2019-05-02T19:11:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:avactisregistertest.NewTest@14acaea5]" name="beforeMethod" is-config="true" duration-ms="23524" started-at="2019-04-28T16:20:49Z" finished-at="2019-04-28T16:21:12Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:avactisregistertest.NewTest@26653222]" name="beforeMethod" is-config="true" duration-ms="23" started-at="2019-05-02T19:11:54Z" finished-at="2019-05-02T19:11:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="f(java.util.Map)[pri:0, instance:avactisregistertest.NewTest@14acaea5]" name="f" duration-ms="35990" started-at="2019-04-28T16:21:12Z" data-provider="dp" finished-at="2019-04-28T16:21:48Z">
+        <test-method status="PASS" signature="f(java.util.Map)[pri:0, instance:avactisregistertest.NewTest@26653222]" name="f" duration-ms="19265" started-at="2019-05-02T19:11:54Z" data-provider="dp" finished-at="2019-05-02T19:12:13Z">
           <params>
             <param index="0">
               <value>
@@ -41,10 +45,14 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:avactisregistertest.NewTest@14acaea5]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-04-28T16:21:48Z" finished-at="2019-04-28T16:21:48Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:avactisregistertest.NewTest@26653222]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-05-02T19:12:13Z" finished-at="2019-05-02T19:12:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:avactisregistertest.NewTest@26653222]" name="teardown" is-config="true" duration-ms="196" started-at="2019-05-02T19:12:13Z" finished-at="2019-05-02T19:12:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
       </class> <!-- avactisregistertest.NewTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

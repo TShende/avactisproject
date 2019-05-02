@@ -1,42 +1,20 @@
 package avactisregister;
 
-import static org.testng.Assert.assertEquals;
 import java.util.Map;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.LoadableComponent;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AvactisRegisterPage  extends LoadableComponent<AvactisRegisterPage>  {
+
+public class AvactisRegisterPage  extends BasePO {
 	
-	WebDriver driver;
-	public String title = "Avactis Demo Store";
-	
-	public AvactisRegisterPage() throws Exception {
-		DriverInstance dr= new DriverInstance();
-		driver = dr.getDriverInstance();
-		PageFactory.initElements(driver, this );	
-	}
-	
-	@Override
-	public void isLoaded() throws Error {
-		assertEquals(driver.getTitle(),title,"Avactis page Not loaded Properely");
+	public AvactisRegisterPage(WebDriver driver) {
+		super(driver);
 	}
 
-	@Override
-	public void load() {
-		try {
-			driver.get(ConfigReader.getPropertyWithKey("Url"));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
 	@FindBy(xpath = "//a[contains(text(),'Sign In')]")
 	@CacheLookup
 	private WebElement signin;
@@ -86,7 +64,6 @@ public class AvactisRegisterPage  extends LoadableComponent<AvactisRegisterPage>
 	
 	public void registerToAvactis(Map<String, String> input)
 	{
-		WebDriverWait wait = new WebDriverWait(driver, 30);
 		signin.click();
 		wait.until(ExpectedConditions.visibilityOf(register)).click();
 		wait.until(ExpectedConditions.visibilityOf(email)).sendKeys(input.get("Email"));
@@ -94,17 +71,8 @@ public class AvactisRegisterPage  extends LoadableComponent<AvactisRegisterPage>
 		wait.until(ExpectedConditions.visibilityOf(retypePassword)).sendKeys(input.get("Re-Type Password"));
 		wait.until(ExpectedConditions.visibilityOf(firstname)).sendKeys(input.get("First Name"));
 		wait.until(ExpectedConditions.visibilityOf(lastname)).sendKeys(input.get("Last Name"));
-		Select selectforcountries = new Select(country);
-		selectforcountries.selectByVisibleText(input.get("Country"));
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		Select selectforstate = new Select(state);
-		selectforstate.selectByVisibleText(input.get("State"));
+		selectElement(country,input.get("Country"));
+		selectElement(state,input.get("State"));
 		wait.until(ExpectedConditions.visibilityOf(zipcode)).sendKeys(input.get("Zip/Postal Code"));
 		wait.until(ExpectedConditions.visibilityOf(city)).sendKeys(input.get("City"));
 		wait.until(ExpectedConditions.visibilityOf(addressline1)).sendKeys(input.get("Address Line 1"));

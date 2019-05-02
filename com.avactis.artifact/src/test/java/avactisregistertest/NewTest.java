@@ -11,17 +11,15 @@ import java.util.Map;
 
 import org.testng.annotations.AfterMethod;
 
-public class NewTest {
+public class NewTest extends BaseTest {
 	AvactisRegisterPage ar;
-  @Test(dataProvider = "dp")
+ @Test(dataProvider = "dp")
   public void f(Map<String, String> input) {
 	  ar.registerToAvactis(input);
 	    }
   @BeforeMethod
   public void beforeMethod() throws Exception {
-	
-	ar = new AvactisRegisterPage();
-	ar.get();
+	  ar = new AvactisRegisterPage(getDriver());
   }
 
   @AfterMethod
