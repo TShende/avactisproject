@@ -8,6 +8,7 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.LoadableComponent;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import avactisregister.ConfigReader;
 
 public class BasePO extends LoadableComponent<BasePO> {
 	
