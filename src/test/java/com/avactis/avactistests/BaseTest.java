@@ -1,9 +1,10 @@
-package avactisregistertest;
+package com.avactis.avactistests;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import avactisregister.DriverInstance;
+
+import com.avactis.utilities.DriverInstance;
 
 public class BaseTest {
 	

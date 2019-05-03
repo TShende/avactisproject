@@ -1,4 +1,4 @@
-package avactisregister;
+package com.avactis.utilities;
 
 import static io.github.bonigarcia.wdm.DriverManagerType.CHROME;
 import static io.github.bonigarcia.wdm.DriverManagerType.IEXPLORER;

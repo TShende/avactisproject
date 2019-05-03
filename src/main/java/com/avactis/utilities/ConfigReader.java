@@ -1,4 +1,4 @@
-package avactisregister;
+package com.avactis.utilities;
 
 import java.io.BufferedReader;
 import java.io.File;

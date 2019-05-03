@@ -1,4 +1,4 @@
-package avactisregister;
+package com.avactis.avactispages;
 
 import java.util.Map;
 
@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
-public class AvactisRegisterPage  extends BasePO {
+public class AvactisRegisterPage  extends BasePage {
 	
 	public AvactisRegisterPage(WebDriver driver) {
 		super(driver);

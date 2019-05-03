@@ -1,4 +1,4 @@
-package avactisregister;
+package com.avactis.avactispages;
 
 import static org.testng.Assert.assertEquals;
 import org.openqa.selenium.WebDriver;
@@ -8,7 +8,9 @@ import org.openqa.selenium.support.ui.LoadableComponent;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BasePO extends LoadableComponent<BasePO> {
+import com.avactis.utilities.ConfigReader;
+
+public class BasePage extends LoadableComponent<BasePage> {
 	
 	  private static final int TIMEOUT = 30;
 	  private static final int POLLING = 100;
@@ -17,7 +19,7 @@ public class BasePO extends LoadableComponent<BasePO> {
 	  protected WebDriverWait wait;
 	  public String title = "Avactis Demo Store";
 	
-	  public BasePO(WebDriver driver) {
+	  public BasePage(WebDriver driver) {
 	        this.driver = driver;
 	        wait = new WebDriverWait(driver, TIMEOUT, POLLING);
 	        PageFactory.initElements(driver, this);

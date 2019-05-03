@@ -1,4 +1,4 @@
-package avactisregister;
+package com.avactis.avactispages;
 
 import java.util.Map;
 
@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
-public class SignInPage extends BasePO {
+public class SignInPage extends BasePage {
 
 	public SignInPage(WebDriver driver) {
 		super(driver);
