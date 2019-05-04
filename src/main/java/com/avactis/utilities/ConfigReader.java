@@ -13,7 +13,7 @@ public class ConfigReader {
 	private static Properties pro;
 	private static String filepath = "./src/main/resources/properties/";
 	private static List<String> files = new ArrayList<String>();
-	private static String file_extension = ".property";
+	private static String file_extension = ".properties";
 
 	private static void files() {
 		File[] filenames = new File(filepath).listFiles();

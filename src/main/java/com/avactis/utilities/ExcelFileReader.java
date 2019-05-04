@@ -17,7 +17,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelFileReader {
-	//TODO Make variables private
+	// TODO Make variables private
 	static XSSFWorkbook wb;
 	static Object[][] exceldata = null;
 	static XSSFCell celldata;
@@ -28,10 +28,6 @@ public class ExcelFileReader {
 
 	private static void setup(String excelName, String sheetName) throws Exception {
 
-		if (excelName == null && sheetName == null) {
-			throw new Exception("ExcelDetails annotation is missing. It must be called at either Method level or class level. If both available, method level will have the priority over class level.");
-
-		}
 		String folderPath = ConfigReader.getPropertyfromFile("avactis", "TestDataFolderpath");
 		File xlsFile = new File(folderPath + File.separator + excelName + ".xls");
 		File xlsxFile = new File(folderPath + File.separator + excelName + ".xlsx");

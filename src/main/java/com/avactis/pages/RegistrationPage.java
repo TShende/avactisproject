@@ -7,9 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
-public class RegisterationPage extends BasePage {
+public class RegistrationPage extends BasePage {
 
-	public RegisterationPage(WebDriver driver) {
+	public RegistrationPage(WebDriver driver) {
 		super(driver);
 	}
 

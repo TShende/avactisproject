@@ -6,26 +6,25 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.avactis.pages.SignInPage;
+import com.avactis.pages.RegistrationPage;
 import com.avactis.utilities.ExcelFileReader;
 
-public class SignInTest extends BaseTest {
+public class RegistrationTest extends BaseTest {
 
-	private SignInPage sp;
+	private RegistrationPage ar;
 
 	@BeforeMethod
-	public void beforeMethod() {
-		sp = new SignInPage(getDriver());
+	public void beforeMethod() throws Exception {
+		ar = new RegistrationPage(getDriver());
 	}
 
 	@Test(dataProvider = "dp")
 	public void f(Map<String, String> input) {
-		sp.doSignIn(input);
+		ar.registerToAvactis(input);
 	}
 
 	@DataProvider(name = "dp")
 	public Object[][] dataprovider() throws Exception {
-		return ExcelFileReader.getData("SignIn", "SignIn Data");
+		return ExcelFileReader.getData("Registration", "Registration data");
 	}
-
 }
