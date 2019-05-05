@@ -1,4 +1,4 @@
-package com.avactis.avactispages;
+package com.avactis.pages;
 
 import java.util.Map;
 
@@ -6,12 +6,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
-public class AvactisRegisterPage  extends BasePage {
+public class RegistrationPage  extends BasePage {
 	
-	public AvactisRegisterPage(WebDriver driver) {
+	public RegistrationPage(WebDriver driver) {
 		super(driver);
 	}
 
@@ -64,21 +63,21 @@ public class AvactisRegisterPage  extends BasePage {
 	
 	public void registerToAvactis(Map<String, String> input)
 	{
-		signin.click();
-		wait.until(ExpectedConditions.visibilityOf(register)).click();
-		wait.until(ExpectedConditions.visibilityOf(email)).sendKeys(input.get("Email"));
-		wait.until(ExpectedConditions.visibilityOf(password)).sendKeys(input.get("Password"));
-		wait.until(ExpectedConditions.visibilityOf(retypePassword)).sendKeys(input.get("Re-Type Password"));
-		wait.until(ExpectedConditions.visibilityOf(firstname)).sendKeys(input.get("First Name"));
-		wait.until(ExpectedConditions.visibilityOf(lastname)).sendKeys(input.get("Last Name"));
-		selectElement(country,input.get("Country"));
-		selectElement(state,input.get("State"));
-		wait.until(ExpectedConditions.visibilityOf(zipcode)).sendKeys(input.get("Zip/Postal Code"));
-		wait.until(ExpectedConditions.visibilityOf(city)).sendKeys(input.get("City"));
-		wait.until(ExpectedConditions.visibilityOf(addressline1)).sendKeys(input.get("Address Line 1"));
-		wait.until(ExpectedConditions.visibilityOf(addressline2)).sendKeys(input.get("Address Line 2"));
-		wait.until(ExpectedConditions.visibilityOf(contactphone)).sendKeys(input.get("Contact Phone"));
-		wait.until(ExpectedConditions.visibilityOf(registerbutton)).click();
+		clickElement(signin);
+		clickElement(register);
+		setValue(email, input.get("Email"));
+		setValue(password, input.get("Password"));
+		setValue(retypePassword, input.get("Re-Type Password"));
+		setValue(firstname, input.get("First Name"));
+		setValue(lastname, input.get("Last Name"));
+		selectElement(country, input.get("Country"));
+		selectElement(state, input.get("State"));
+		setValue(zipcode, input.get("Zip/Postal Code"));
+		setValue(city, "City");
+		setValue(addressline1, input.get("Address Line 1"));
+		setValue(addressline2, input.get("Address Line 2"));
+		setValue(contactphone, input.get("Contact Phone"));
+		clickElement(registerbutton);
 		
 	}
 	

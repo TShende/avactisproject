@@ -13,15 +13,11 @@ import java.util.logging.Logger;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.util.IOUtils;
-import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelFileReader {
-	static XSSFWorkbook wb;
-	static Object[][] exceldata = null;
-	static XSSFCell celldata;
-	static List<Map<String, String>> execldata2;
+	
 	private static XSSFSheet xssfSheet;
 	private static FileInputStream fis;
 	private static Logger logger = Logger.getLogger(ExcelFileReader.class.getName());
@@ -32,6 +28,7 @@ public class ExcelFileReader {
 			throw new Exception("ExcelDetails annotation is missing. It must be called at either Method level or class level. If both available, method level will have the priority over class level.");
 
 		}		
+		
 		String folderPath = ConfigReader.getPropertyfromFile("avactis", "TestDataFolderpath");
 		File xlsFile = new File(folderPath + File.separator + excelName + ".xls");
 		File xlsxFile = new File(folderPath + File.separator + excelName + ".xlsx");
@@ -42,6 +39,7 @@ public class ExcelFileReader {
 		} else {
 			throw new Exception("Excel Details are not correct. Trying to load excel '" + excelName + "' and sheet name '" + sheetName + "'. Either or both of which are not available/wrong.");
 		}
+		
 		XSSFWorkbook xssfWorkbook = new XSSFWorkbook(fis);
 		xssfSheet = xssfWorkbook.getSheet(sheetName);
 		if (xssfSheet == null) {

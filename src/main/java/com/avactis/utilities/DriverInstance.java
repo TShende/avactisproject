@@ -11,31 +11,27 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverInstance {
 	
-WebDriver driver = null;
+	WebDriver driver = null;
 
-public WebDriver getDriverInstance() throws Exception {
+	public WebDriver get() throws Exception {
 	
-String browser;
-browser =	ConfigReader.getPropertyfromFile("avactis", "browser");
+		String browser=	ConfigReader.getPropertyfromFile("avactis", "browser");
 
-	if(browser.equalsIgnoreCase("CHROME")) {
+		if(browser.equalsIgnoreCase("CHROME")) {
 		WebDriverManager.getInstance(CHROME).setup();
 		driver = new ChromeDriver();
 		return driver;
-	}
-	
-	else if(browser.equalsIgnoreCase("IE")) {
+		}else if(browser.equalsIgnoreCase("IE")) {
 		WebDriverManager.getInstance(IEXPLORER).setup();
 		driver = new InternetExplorerDriver();
 		return driver;
+		}
+		return driver;
 	}
-return driver;
-}
 	
-public void close()
-{
-	driver.quit();
-}
+	public void close(){
+		driver.quit();
+	}
 	
 	
 

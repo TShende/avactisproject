@@ -1,4 +1,4 @@
-package com.avactis.avactispages;
+package com.avactis.pages;
 
 import java.util.Map;
 
@@ -28,11 +28,9 @@ public class SignInPage extends BasePage {
 	
 	public void doSignIn(Map<String, String> input) {
 		
-		signin.click();
-		
-		emailID.sendKeys(input.get("EmailID"));
-		password.sendKeys(input.get("Password"));
-		
-		signInButton.click();		
+		clickElement(signin);
+		setValue(emailID, input.get("EmailID"));
+		setValue(password, input.get("Password"));
+		clickElement(signInButton);		
 	}
 }

@@ -1,9 +1,10 @@
-package com.avactis.avactispages;
+package com.avactis.pages;
 
 import static org.testng.Assert.assertEquals;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.LoadableComponent;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -46,5 +47,13 @@ public class BasePage extends LoadableComponent<BasePage> {
 		Select selectelement = new Select(element);
 		selectelement.selectByVisibleText(key);
 		
+	}
+	
+	protected void clickElement(WebElement element) {
+		wait.until(ExpectedConditions.visibilityOf(element)).click();
+	}
+
+	protected void setValue(WebElement element, String value) {
+		wait.until(ExpectedConditions.visibilityOf(element)).sendKeys(value);
 	}
 }
