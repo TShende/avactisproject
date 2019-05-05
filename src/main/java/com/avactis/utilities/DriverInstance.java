@@ -29,13 +29,11 @@ public class DriverInstance {
 		}
 
 		return driver;
+	}
 
 	public void close() {
 		driver.quit();
 	}
-	
-	public void close(){
-		driver.quit();
-	}
+
 	
 }

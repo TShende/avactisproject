@@ -80,4 +80,4 @@ public class RegistrationPage extends BasePage {
 		clickElement(registerbutton);
 	}
 }
-}
+
