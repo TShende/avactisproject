@@ -11,7 +11,7 @@ import java.util.Properties;
 public class ConfigReader {
 
 	private static Properties pro;
-	private static String filepath = "./src/main/resources/";
+	private static String filepath = "./src/main/resources/properties/";
 	private static List<String> files =new ArrayList<String>();
 	private static String file_extension = ".properties";
 	

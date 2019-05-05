@@ -38,7 +38,7 @@ public class BasePage extends LoadableComponent<BasePage> {
 
 	@Override
 	protected void isLoaded() throws Error {
-		assertEquals(driver.getTitle(), title, "Avactis page Not loaded Properelly");
+		assertEquals(driver.getTitle(), title, "Avactis page Not loaded Properely");
 	}
 
 	protected void selectElement(WebElement element, String key) {

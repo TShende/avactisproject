@@ -16,17 +16,16 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelFileReader {
-	
+
 	private static XSSFSheet xssfSheet;
 	private static FileInputStream fis;
 	private static Logger logger = Logger.getLogger(ExcelFileReader.class.getName());
 
 	private static void setup(String excelName, String sheetName) throws Exception {
 		if (excelName == null && sheetName == null) {
-			throw new Exception("ExcelDetails annotation is missing. It must be called at either Method level or class level. If both available, method level will have the priority over class level.");
+			throw new Exception("ExcelName or sheetName is null");
+		}
 
-		}		
-		
 		String folderPath = ConfigReader.getPropertyfromFile("avactis", "TestDataFolderpath");
 		File xlsFile = new File(folderPath + File.separator + excelName + ".xls");
 		File xlsxFile = new File(folderPath + File.separator + excelName + ".xlsx");
@@ -37,7 +36,7 @@ public class ExcelFileReader {
 		} else {
 			throw new Exception("Excel Details are not correct. Trying to load excel '" + excelName + "' and sheet name '" + sheetName + "'. Either or both of which are not available/wrong.");
 		}
-		
+
 		XSSFWorkbook xssfWorkbook = new XSSFWorkbook(fis);
 		xssfSheet = xssfWorkbook.getSheet(sheetName);
 		if (xssfSheet == null) {
