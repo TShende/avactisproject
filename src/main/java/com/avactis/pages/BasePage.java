@@ -14,11 +14,11 @@ import com.avactis.utilities.ConfigReader;
 public class BasePage extends LoadableComponent<BasePage> {
 
 	private static final int TIMEOUT = 30;
-	private static final int POLLING = 100;
+	private static final int POLLING = 1000;
 
 	protected WebDriver driver;
 	protected WebDriverWait wait;
-	public String title = "Avactis Demo Store";
+	private String title = "Avactis Demo Store";
 
 	public BasePage(WebDriver driver) {
 		this.driver = driver;
@@ -29,15 +29,11 @@ public class BasePage extends LoadableComponent<BasePage> {
 
 	@Override
 	protected void load() {
-		try {
-			driver.get(ConfigReader.getPropertyWithKey("Url"));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		driver.get(ConfigReader.getPropertyWithKey("Url"));
 	}
 
 	@Override
-	protected void isLoaded() throws Error {
+	protected void isLoaded() {
 		assertEquals(driver.getTitle(), title, "Avactis page Not loaded Properely");
 	}
 

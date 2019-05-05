@@ -25,6 +25,7 @@ public class RegistrationTest extends BaseTest {
 
 	@Test(dataProvider = "dp")
 	public void f(Map<String, String> input) {
+		System.out.println(input);
 		ar.registerToAvactis(input);
 	}
 }
