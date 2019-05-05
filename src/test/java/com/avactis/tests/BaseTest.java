@@ -11,8 +11,8 @@ import com.avactis.utilities.ExcelFileReader;
 public class BaseTest {
 
 	private WebDriver driver;
-	public String excelName;
-	public String sheetName;
+	String excelName;
+	String sheetName;
 
 	@BeforeClass
 	public void beforeSuite() {
