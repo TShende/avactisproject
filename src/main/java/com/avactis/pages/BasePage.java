@@ -12,21 +12,21 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.avactis.utilities.ConfigReader;
 
 public class BasePage extends LoadableComponent<BasePage> {
-	
-	  private static final int TIMEOUT = 30;
-	  private static final int POLLING = 100;
 
-	  protected WebDriver driver;
-	  protected WebDriverWait wait;
-	  public String title = "Avactis Demo Store";
-	
-	  public BasePage(WebDriver driver) {
-	        this.driver = driver;
-	        wait = new WebDriverWait(driver, TIMEOUT, POLLING);
-	        PageFactory.initElements(driver, this);
-	        this.get();
-	  }
-	
+	private static final int TIMEOUT = 30;
+	private static final int POLLING = 100;
+
+	protected WebDriver driver;
+	protected WebDriverWait wait;
+	public String title = "Avactis Demo Store";
+
+	public BasePage(WebDriver driver) {
+		this.driver = driver;
+		wait = new WebDriverWait(driver, TIMEOUT, POLLING);
+		PageFactory.initElements(driver, this);
+		this.get();
+	}
+
 	@Override
 	protected void load() {
 		try {
@@ -34,21 +34,18 @@ public class BasePage extends LoadableComponent<BasePage> {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 	}
 
 	@Override
 	protected void isLoaded() throws Error {
-		assertEquals(driver.getTitle(),title,"Avactis page Not loaded Properely");
-		
+		assertEquals(driver.getTitle(), title, "Avactis page Not loaded Properely");
 	}
-	
+
 	protected void selectElement(WebElement element, String key) {
 		Select selectelement = new Select(element);
 		selectelement.selectByVisibleText(key);
-		
 	}
-	
+
 	protected void clickElement(WebElement element) {
 		wait.until(ExpectedConditions.visibilityOf(element)).click();
 	}
@@ -56,4 +53,5 @@ public class BasePage extends LoadableComponent<BasePage> {
 	protected void setValue(WebElement element, String value) {
 		wait.until(ExpectedConditions.visibilityOf(element)).sendKeys(value);
 	}
+
 }

@@ -1,6 +1,5 @@
 package com.avactis.utilities;
 
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -17,18 +16,29 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelFileReader {
+<<<<<<< HEAD
 	
+=======
+	// TODO Make variables private
+	static XSSFWorkbook wb;
+	static Object[][] exceldata = null;
+	static XSSFCell celldata;
+	static List<Map<String, String>> execldata2;
+>>>>>>> branch 'master' of https://github.com/TShende/avactisproject.git
 	private static XSSFSheet xssfSheet;
 	private static FileInputStream fis;
 	private static Logger logger = Logger.getLogger(ExcelFileReader.class.getName());
-	
+
 	private static void setup(String excelName, String sheetName) throws Exception {
 
+<<<<<<< HEAD
 		if (excelName == null && sheetName == null) {
 			throw new Exception("ExcelDetails annotation is missing. It must be called at either Method level or class level. If both available, method level will have the priority over class level.");
 
 		}		
 		
+=======
+>>>>>>> branch 'master' of https://github.com/TShende/avactisproject.git
 		String folderPath = ConfigReader.getPropertyfromFile("avactis", "TestDataFolderpath");
 		File xlsFile = new File(folderPath + File.separator + excelName + ".xls");
 		File xlsxFile = new File(folderPath + File.separator + excelName + ".xlsx");
@@ -98,7 +108,7 @@ public class ExcelFileReader {
 		}
 		return results;
 	}
-	
+
 	private static String[] getDataFromRow(Sheet sheet, int rowIndex) {
 		Row row = sheet.getRow(rowIndex);
 		short numCells = row.getLastCellNum();
