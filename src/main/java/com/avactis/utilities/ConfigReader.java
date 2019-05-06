@@ -16,9 +16,9 @@ public class ConfigReader {
 	private static String file_extension = ".properties";
 	
 	public static void files() {
-			
+		
 	File[] filenames = new File(filepath).listFiles();
-	for(File file: filenames) {
+			for(File file: filenames) {
 				if(file.isFile()) {
 					files.add(file.getName());
 				}
@@ -40,7 +40,7 @@ public class ConfigReader {
 	public static String getPropertyWithKey(String Key) {
 		String value = null;
 		files();
-for(String file : files){	
+		for(String file : files){	
 			loadFile(file);
 			value =pro.getProperty(Key);
 			if(value !=null){
@@ -51,7 +51,7 @@ for(String file : files){
 
 	}
 
-public static String getPropertyfromFile(String filename, String key) {
+	public static String getPropertyfromFile(String filename, String key) {
 		String value = null;
 		files();
 		for (String file : files) {
