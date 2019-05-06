@@ -2,7 +2,10 @@ package com.avactis.tests;
 
 import java.util.Map;
 
-import org.testng.annotations.BeforeClass;
+
+
+
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -12,11 +15,14 @@ public class RegistrationTest extends BaseTest {
 
 	private RegistrationPage ar;
 
-	@BeforeClass
-	public void provideExcelDetails() {
-		excelName = "Registration";
-		sheetName = "Registration data";
-	}
+
+
+
+
+
+
+
+
 
 	@BeforeMethod
 	public void beforeMethod() throws Exception {
@@ -28,4 +34,14 @@ public class RegistrationTest extends BaseTest {
 		System.out.println(input);
 		ar.registerToAvactis(input);
 	}
+
+
+	
+	@DataProvider(name = "dp")
+	public Object[][] dataprovider() throws Exception {
+		return ExcelFileReader.getData("Registration", "Registration data");
+	}
+	
+
 }
+

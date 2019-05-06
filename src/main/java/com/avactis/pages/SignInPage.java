@@ -34,7 +34,9 @@ public class SignInPage extends BasePage {
 		setValue(password, input.get("Password"));
 		clickElement(signInButton);		
 
-
+	}
+	
+	public void checkUserName() {
 		
 	}
 }
