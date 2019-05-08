@@ -2,27 +2,16 @@ package com.avactis.tests;
 
 import java.util.Map;
 
-
-
-
-
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.avactis.pages.RegistrationPage;
+import com.avactis.utilities.ExcelFileReader;
 
 public class RegistrationTest extends BaseTest {
 
 	private RegistrationPage ar;
-
-
-
-
-
-
-
-
-
 
 	@BeforeMethod
 	public void beforeMethod() throws Exception {

@@ -4,20 +4,16 @@ import java.util.Map;
 
 
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.avactis.pages.SignInPage;
+import com.avactis.utilities.ExcelFileReader;
 
 
 public class SignInTest extends BaseTest {
 
 	private SignInPage sp;
-
-
-
-
-
-
 
 	@BeforeMethod
 	public void beforeMethod() {
@@ -29,9 +25,6 @@ public class SignInTest extends BaseTest {
 		sp.doSignIn(input);
 
 	}
-
-
-
 	
 	@DataProvider(name = "dp")
 	public Object[][] dataprovider() throws Exception {
