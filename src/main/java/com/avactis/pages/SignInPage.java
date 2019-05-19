@@ -27,16 +27,28 @@ public class SignInPage extends BasePage {
 	@FindBy(xpath = "//input[@class='btn btn-primary input_submit']")
 	private WebElement signInButton;
 	
+	@FindBy(xpath = "//span[@class='header_wel']/parent::span")
+	private WebElement username;
+	
 	public void doSignIn(Map<String, String> input) {
 		
 		clickElement(signin);
 		setValue(emailID, input.get("EmailID"));
+		logger.info("Entering Username");
 		setValue(password, input.get("Password"));
-		clickElement(signInButton);		
+		logger.info("Entering Password");
+		clickElement(signInButton);	
+		logger.info("Signing In");
+		logger.info("User is Signed In");
 
 	}
 	
-	public void checkUserName() {
+	public String checkUserName() {
+		
+		String name = username.getText();
+		name = name.substring(8, 14);
+		System.out.println(name);
+		return name;
 		
 	}
 }

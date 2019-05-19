@@ -2,7 +2,7 @@ package com.avactis.tests;
 
 import java.util.Map;
 
-
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -23,7 +23,8 @@ public class SignInTest extends BaseTest {
 	@Test(dataProvider = "dp")
 	public void f(Map<String, String> input) {
 		sp.doSignIn(input);
-
+		String name = sp.checkUserName();
+		Assert.assertEquals(name, "Tripti", "Username doesnot match");
 	}
 	
 	@DataProvider(name = "dp")

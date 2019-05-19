@@ -1,8 +1,13 @@
 package com.avactis.pages;
 
 import static org.testng.Assert.assertEquals;
+
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.LoadableComponent;
@@ -15,6 +20,7 @@ public class BasePage extends LoadableComponent<BasePage> {
 
 	private static final int TIMEOUT = 30;
 	private static final int POLLING = 1000;
+	static Logger logger = Logger.getLogger(BasePage.class);
 
 	protected WebDriver driver;
 	protected WebDriverWait wait;
@@ -25,6 +31,7 @@ public class BasePage extends LoadableComponent<BasePage> {
 		wait = new WebDriverWait(driver, TIMEOUT, POLLING);
 		PageFactory.initElements(driver, this);
 		this.get();
+		DOMConfigurator.configure("loggerxml.xml");
 	}
 
 	@Override
@@ -48,6 +55,12 @@ public class BasePage extends LoadableComponent<BasePage> {
 
 	protected void setValue(WebElement element, String value) {
 		wait.until(ExpectedConditions.visibilityOf(element)).sendKeys(value);
+	}
+	
+	protected void mouseHover(WebElement element) {
+		Actions builder = new Actions(driver);
+		Action mousehover = builder.moveToElement(element).build();
+		mousehover.perform();
 	}
 
 }

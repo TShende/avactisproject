@@ -4,6 +4,7 @@
   <test name="Test">
     <classes>
       <class name="com.avactis.tests.SignInTest"/>
+      <class name="com.avactis.tests.AddToCartTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

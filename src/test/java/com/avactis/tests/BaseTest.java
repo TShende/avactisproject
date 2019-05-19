@@ -15,8 +15,6 @@ public class BaseTest {
 
 	private WebDriver driver;
 
-
-
 	@BeforeClass
 	public void beforeSuite() {
 		driver = new DriverInstance().get();
