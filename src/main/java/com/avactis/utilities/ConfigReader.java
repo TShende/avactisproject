@@ -40,7 +40,7 @@ public class ConfigReader {
 	public static String getPropertyWithKey(String Key) {
 		String value = null;
 		files();
-		for(String file : files){	
+		for(String file : files) {
 			loadFile(file);
 			value =pro.getProperty(Key);
 			if(value !=null){

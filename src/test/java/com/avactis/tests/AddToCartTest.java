@@ -26,6 +26,6 @@ public class AddToCartTest extends BaseTest{
 	
 	@DataProvider(name = "dp")
 	public Object[][] dataprovider() throws Exception {
-		return ExcelFileReader.getData("Product details", "Product Details");
+		return ExcelFileReader.getData("SignIn", "Product Details");
 	}
 }
