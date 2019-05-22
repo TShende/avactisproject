@@ -25,13 +25,21 @@ public class MainPage extends BasePage{
 	protected void goToCategory(Map<String, String> input) {
 		
 		avactisLogo.click();
-		category = driver.findElement(By.xpath(categoryXpath + input.get("Product Category") + "')]"));
+		String Link = categoryXpath + input.get("Product Category").toString() + "')]";
+		//System.out.println(Link);
+		category = driver.findElement(By.xpath(Link));
 		
-		if(input.get("Product Sub Category")==null) {
+		System.out.println(input.get("Product Sub Category"));
+		System.out.println(categoryXpath + input.get("Product Category").toString() + "')]");
+		
+		if((input.get("Product Sub Category")=="")) {
+			System.out.println("Catagery to be chossen");
 			category.click();
+			System.out.println("Catagery choosed");
 		}
 		
-		else {
+		else if((input.get("Product Sub Category")!=null)) {
+			System.out.println("mouse hover");
 			mouseHover(category);
 			subcategory = driver.findElement(By.xpath(subCategoryXpath+input.get("Product Sub Category")+"')]"));
 			subcategory.click();
@@ -39,13 +47,19 @@ public class MainPage extends BasePage{
 		
 	}
 	
-	protected void selectProduct(Map<String, String> input) {
+	protected void selectProduct(Map<String, String> input) throws InterruptedException {
+		System.out.println("Inside");
 		goToCategory(input);
-		product = driver.findElement(By.xpath(productXpath +input.get("Product Number")+ "']/a[1]"));
+		Thread.sleep(3000);
+		System.out.println("Outside");
+		
+		product = driver.findElement(By.xpath(productXpath +input.get("Product Number").toString()+ "']/a[1]"));
+		
+		System.out.println(productXpath +input.get("Product Number").toString()+ "']/a[1]");
 		product.click();
 	}
 	
-	public void addToCart(Map<String, String> input) {
+	public void addToCart(Map<String, String> input) throws InterruptedException {
 		selectProduct(input);
 		addToCart = driver.findElement(By.xpath(addToCartButton));
 		addToCart.click();

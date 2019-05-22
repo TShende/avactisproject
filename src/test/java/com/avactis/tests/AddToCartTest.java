@@ -20,7 +20,7 @@ public class AddToCartTest extends BaseTest{
 	}
 	
 	@Test(dataProvider = "dp")
-	public void f(Map<String, String> input) {
+	public void f(Map<String, String> input) throws InterruptedException {
 		mp.addToCart(input);
 	}
 	

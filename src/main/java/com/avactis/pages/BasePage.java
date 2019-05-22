@@ -31,7 +31,7 @@ public class BasePage extends LoadableComponent<BasePage> {
 		wait = new WebDriverWait(driver, TIMEOUT, POLLING);
 		PageFactory.initElements(driver, this);
 		this.get();
-		DOMConfigurator.configure("loggerxml.xml");
+		DOMConfigurator.configure("D:\\Workspace_new\\avactisproject\\avactisproject\\src\\main\\resources\\loggerxml.xml");
 	}
 
 	@Override
